@@ -18,6 +18,11 @@ public class PassengerController {
 
     @PostMapping("/create")
     public Integer registerPassenger(@RequestBody Passenger passenger){
-        return passengerService.addPassenger(passenger);
+        try {
+            return  passengerService.addPassenger(passenger);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
