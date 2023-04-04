@@ -43,8 +43,7 @@ List<Train>trains = new ArrayList<>();
          train.setNoOfSeats(trainEntryDto.getNoOfSeats());
 
          trains.add(train);
-         trainRepository.save(train);
-        return train.getTrainId();
+        return trainRepository.save(train).getTrainId();
     }
 
     public Integer calculateAvailableSeats(SeatAvailabilityEntryDto seatAvailabilityEntryDto){

@@ -14,9 +14,7 @@ public class PassengerService {
 
     public Integer addPassenger(Passenger passenger) throws Exception {
         //Add the passenger Object in the passengerDb and return the passegnerId that has been returned
-       // Passenger newpassenger = new Passenger();
-      //  newpassenger.setName(passenger.getName());
-       // newpassenger.setAge(passenger.getAge());
+
         passengerRepository.save(passenger);
        return passenger.getPassengerId();
     }
